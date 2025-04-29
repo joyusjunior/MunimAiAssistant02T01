@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome, {{ user.name }}!</h1>
+<p>Your email: {{ user.email }}</p>
+
+<h2>Your Google Drive Files:</h2>
+<ul>
+    {% for file in files %}
+    <li>{{ file.name }} ({{ file.id }})</li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}
